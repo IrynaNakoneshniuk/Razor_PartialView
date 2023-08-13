@@ -1,0 +1,41 @@
+﻿@model PersonInfo
+
+<div> <lable>Name:</lable>
+@Html.DisplayFor(x => x.Name)
+</div>
+<br />
+<div>
+<lable>Surname:</lable>
+@Html.LabelFor(x => x.Surname, "Surname")
+</div>
+<br />
+<div>
+<lable>Last name:</lable>
+@Html.DisplayFor(x => x.LastName)
+</div>
+<br />
+<div>
+<lable>Gender:</lable>
+@Html.DisplayFor(x => x.Gender)
+</div>
+<br />
+<div>
+<lable>City:</lable>
+@Html.DisplayFor(x => x.City)
+</div>
+<br />
+<div> <lable>Hobbies:</lable>
+    @if (Model.Hobby!=null)
+    {
+        foreach (var item in Model.Hobby)
+        {
+            <text>@(item + ", ")</text>
+        }
+    }
+    
+</div>
+<br />
+<div>
+    <lable>Date of bithd:</lable>
+    @Html.DisplayFor(x => x.DateOfBithd)
+</div>

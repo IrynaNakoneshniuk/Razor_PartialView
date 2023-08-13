@@ -1,0 +1,42 @@
+﻿@using Razor_PartialView.Services;
+@model PersonInfo
+@inject IGetListsUserInfo listUserInfo
+
+@{
+    ViewData["Title"] = "MyData Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <form action="post">
+        <div>
+            <input type="text" name="Name" placeholder="Name" />
+            <input type="text" name="LastName" placeholder="Last name" />
+            <input type="text" name="Surname" placeholder="Surname" />
+        </div>
+        <br />
+        <div>
+            Man
+            @Html.RadioButtonFor(m=>m.Gender,"Man")
+            Women
+            @Html.RadioButtonFor(m=>m.Gender,"Women")
+        </div>
+        <br />
+        <div>
+         @Html.DropDownList("City",listUserInfo.GetSelectedCity() as SelectList)
+        </div>
+        <br />
+        <div>
+            @Html.LabelFor(m=>m.Hobby)
+            @Html.ListBox("Hobby",listUserInfo.GetListHobbies() as  MultiSelectList)
+        </div>
+        <br />
+        <div>
+            <label>Date of birthd</label>
+            <input type="date" name="DateOfBithd"/>
+        </div>
+        <br />
+        <button type="submit" asp-action="MyDataView" asp-controller="Home">Send</button>
+    </form>
+</div>
+ 
