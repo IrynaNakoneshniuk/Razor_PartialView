@@ -1,30 +1,32 @@
 ﻿@model PersonInfo
 
-<div> <lable>Name:</lable>
+<div>
+@Html.LabelFor(x=>x.Name)
 @Html.DisplayFor(x => x.Name)
 </div>
 <br />
 <div>
-<lable>Surname:</lable>
-@Html.LabelFor(x => x.Surname, "Surname")
+    @Html.LabelFor(x=>x.Surname)
+    @Html.LabelFor(x => x.Surname, "Surname")
 </div>
 <br />
 <div>
-<lable>Last name:</lable>
+    @Html.LabelFor(x=>x.LastName)
 @Html.DisplayFor(x => x.LastName)
 </div>
 <br />
 <div>
-<lable>Gender:</lable>
+ @Html.LabelFor(x=>x.Gender)
 @Html.DisplayFor(x => x.Gender)
 </div>
 <br />
 <div>
-<lable>City:</lable>
+ @Html.LabelFor(x=>x.City)
 @Html.DisplayFor(x => x.City)
 </div>
 <br />
-<div> <lable>Hobbies:</lable>
+<div>
+    @Html.LabelFor(m=>m.Hobby)
     @if (Model.Hobby!=null)
     {
         foreach (var item in Model.Hobby)
@@ -32,10 +34,9 @@
             <text>@(item + ", ")</text>
         }
     }
-    
 </div>
 <br />
 <div>
-    <lable>Date of bithd:</lable>
+    @Html.LabelFor(x => x.DateOfBithd)
     @Html.DisplayFor(x => x.DateOfBithd)
 </div>
