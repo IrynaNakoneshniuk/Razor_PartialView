@@ -1,9 +1,22 @@
-﻿@{
+﻿@model PersonInfo
+
+@{
     ViewData["Title"] = "MyDataView";
 }
-<h1>@ViewData["Title"]</h1>
 
-<div>
-    @await Html.PartialAsync("_PersonInfo")
-
+<div class="container align-content-center justify-content-center col-6">
+    <h1>@ViewData["Title"]</h1>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>LastName:</strong> @Model.LastName</p>
+    <p><strong>Surname:</strong> @Model.Surname</p>
+    <p><strong>Hobbies:</strong> </p>
+    <ul>
+    @foreach (var item in Model?.Hobby)
+    {
+        <li>@item</li>
+    }
+    </ul>
+    <p><strong>City:</strong> @Model.City</p>
+    <p><strong>Gender:</strong> @Model.Gender</p>
+    <p><strong>Date of bithd:</strong> @Model.DateOfBithd</p>
 </div>

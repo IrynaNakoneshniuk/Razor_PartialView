@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Razor_PartialView.Models
 {
     public class PersonInfo
@@ -8,7 +10,7 @@ namespace Razor_PartialView.Models
         public string ? LastName { get; set; }
         public string ? Gender { get; set; }
         public string? City { get; set; }
-        public List<string> ?Hobby { get; set; } 
+        public List<string> ?Hobby { get; set; }
         public string ?DateOfBithd { get; set; }
     }
 }
